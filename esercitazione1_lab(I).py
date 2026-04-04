@@ -38,7 +38,7 @@ class MovingAverage():
         if(len(data)<self.window_length):
             raise ExamException("finestra maggiore del numero di argomenti della lista")
         for idx,elem in enumerate(data):
-            if(not isinstance(elem,int) or isinstance(elem,float)):
+            if(not isinstance(elem,(int,float))):
                 raise ExamException(f"la lista contiene un elemento che non è un numero alla posizione {idx}")
         output=[]
         for i in range(len(data)-self.window_length+1):
